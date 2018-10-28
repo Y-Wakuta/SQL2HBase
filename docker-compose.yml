@@ -1,0 +1,27 @@
+version: '2'
+services:
+  hbase:
+    build: ./hbase
+    container_name: "hbase"
+    ports:
+      - "2181:2181"
+      - "16010:16010"
+    tty: true
+  drill:
+    build: ./apache-drill
+    container_name: "apache-drill"
+    ports:
+        - "8047:8047"
+        - "31010:31010"
+        - "31011:31011"
+        - "31012:31012"
+    tty: true
+  postgres:
+    build: ./postgres
+    container_name: "postgres"
+    ports:
+      - "5432:5432"
+    tty: true
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
