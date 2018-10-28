@@ -1,0 +1,2 @@
+# SQL2Hbase
+Apache Drill等を使用することで、HBaseに対してPostgreSQLからSQLクエリを発行します。
